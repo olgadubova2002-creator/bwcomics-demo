@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23ff488b'/%3E%3Cpath d='M9 7h8a5 5 0 0 1 0 9h-8zm0 9h9a5 5 0 0 1 0 9H9z' fill='%230d060b'/%3E%3C/svg%3E">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BWComics · комиксы и манга в Туле</title>
+<meta name="description" content="Магазин комиксов и манги в Туле, Likerka Loft, павильон 16. 6 660 позиций в ВК Маркете, доставка СДЭК по России, предзаказы и подбор по жанру.">
+<meta property="og:title" content="BWComics – комиксы и манга в Туле">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:image" content="https://olgadubova2002-creator.github.io/bwcomics-demo/assets/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://api.fontshare.com">
+<link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
+<link href="https://api.fontshare.com/v2/css?f[]=switzer@400,500,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0d060b; --surface:#1b0e17; --ink:#ffffff; --muted:#b7abb3; --accent:#ff488b; --accent-ink:#0d060b;
+  --field-1:#470c35; --field-2:#ffffff; --field-2-ink:#101421; --field-2-muted:#4d5260;
+  --step-small:clamp(.8125rem,.79rem + .1vw,.875rem); --step-body:clamp(1.0625rem,1rem + .25vw,1.1875rem);
+  --step-lead:clamp(1.25rem,1.1rem + .7vw,1.625rem); --step-head:clamp(2rem,1.3rem + 3.2vw,4rem);
+  --m:clamp(16px,1.4vw,20px); --g:12px;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--step-body)/1.5 "Switzer",system-ui,"Segoe UI",sans-serif;letter-spacing:-.005em;-webkit-font-smoothing:antialiased}
+h1,h2,h3,p,ul,ol,figure{margin:0;padding:0}
+ul,ol{list-style:none}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;background:var(--accent);color:var(--accent-ink);font:600 var(--step-body)/1 "Switzer",sans-serif;text-decoration:none;border:0;border-radius:0;cursor:pointer;transition:transform .16s var(--ease),background-color .16s var(--ease)}
+.btn:active{transform:scale(.97)}
+@media (hover:hover) and (pointer:fine){.btn:hover{background:#fff}}
+h2{font-weight:600;letter-spacing:-.04em;line-height:.98;font-size:var(--step-head);text-wrap:balance}
+
+/* обложки-заглушки: плоский цвет вместо настоящей обложки */
+.cover,.ph,.sf{background:var(--bg);color:var(--ink);position:relative;overflow:hidden}
+.cover{aspect-ratio:var(--r);display:flex;align-items:flex-end;padding:10px}
+.cover span{font-weight:600;letter-spacing:-.03em;line-height:.95;font-size:clamp(1rem,1.9vw,1.7rem);text-wrap:balance}
+.cover img,.ph img,.sf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.fr{margin:0}
+.fr .cover{background:var(--bg);color:var(--ink)}
+.fr figcaption{height:28px;display:flex;align-items:center;padding:0 10px;background:var(--sb);color:var(--si);font-size:var(--step-small);font-weight:500;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+/* 1 · hero */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;padding:0 var(--m)}
+.sheet{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--g);height:100%}
+.hc{display:flex;flex-direction:column;gap:var(--g);transform:translateY(var(--o))}
+.hc .fr{transition:opacity .3s var(--ease)}
+.panel{position:absolute;z-index:2;top:28%;left:calc(var(--m) + (100% - 2*var(--m) - 5*var(--g))/6 + var(--g));width:calc((100% - 2*var(--m) - 5*var(--g))/6*3 + 2*var(--g));min-height:410px;
+  background:var(--field-2);color:var(--field-2-ink);padding:24px;display:flex;flex-direction:column;border:var(--g) solid var(--bg)}
+.panel .mark{font-weight:600;font-size:28px;letter-spacing:-.04em;line-height:1}
+.panel h1{margin-top:20px;font-weight:600;font-size:clamp(2.2rem,5.2vw,5.6rem);line-height:.96;letter-spacing:-.04em;text-wrap:balance}
+.panel .sub{margin-top:14px;color:var(--field-2-ink);font-size:17px;line-height:1.4}
+.panel .btn{margin-top:20px;align-self:flex-start}
+.panel nav{margin-top:auto;padding-top:20px;display:flex;flex-wrap:wrap;gap:6px 16px;font-size:var(--step-small);font-weight:500}
+.panel nav a{display:inline-flex;align-items:center;min-height:32px}
+.hero .hc{animation:colin .9s var(--ease) both}
+.hero .hc:nth-child(2){animation-delay:.06s}.hero .hc:nth-child(3){animation-delay:.12s}.hero .hc:nth-child(4){animation-delay:.18s}.hero .hc:nth-child(5){animation-delay:.24s}.hero .hc:nth-child(6){animation-delay:.3s}
+@keyframes colin{from{opacity:0;transform:translateY(calc(var(--o) + 40px))}to{opacity:1;transform:translateY(var(--o))}}
+@media (hover:hover) and (pointer:fine){.hc:hover .fr{opacity:.55}.hc .fr:hover{opacity:1}}
+@media (max-width:860px){
+  .hero{height:auto;min-height:0;padding:var(--m)}
+  .panel{position:static;width:auto;left:auto;order:-1;min-height:40svh;margin-bottom:var(--g);border:0}
+  .hero{display:flex;flex-direction:column}
+  .panel .mark{font-size:7vw}.panel h1{font-size:9vw}.panel .btn{align-self:stretch}
+  .sheet{grid-template-columns:repeat(2,1fr);gap:8px;height:auto}
+  .hc:nth-child(n+3){display:none}
+  .hc{gap:8px}.hc:nth-child(2){transform:translateY(-60px);margin-bottom:-60px}
+  .hc:nth-child(1){transform:none}
+  @keyframes colin{from{opacity:0}to{opacity:1}}
+}
+
+/* 2 · бокс: одна картинка, нарезанная на плитки */
+.sec{padding:clamp(80px,12vw,200px) var(--m)}
+.board{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;clip-path:inset(0 0 0 0)}
+.sec-pin{padding-top:0;padding-bottom:0}
+.pin{height:280svh}
+.stick{position:sticky;top:0;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.stick .board{width:min(100%,calc((100svh - 2*var(--m))*1.5));clip-path:none}
+.js .mt{will-change:transform,opacity}
+.mt{aspect-ratio:1;background:url("assets/box.webp") calc(var(--c)/5*100%) calc(var(--r)/3*100%)/600% 400% no-repeat;overflow:hidden;transition:background-size .5s var(--ease)}
+@media (hover:hover) and (pointer:fine){.mt:not(.ct):hover{background-size:648% 432%}}
+.ct{background:var(--surface);padding:16px;display:flex;flex-direction:column;justify-content:space-between}
+.ct h2{font-size:clamp(1rem,1.65vw,1.6rem);line-height:1}
+.ct p{font-size:var(--step-small);color:var(--muted);line-height:1.3}
+.ct p b{display:block;font-size:clamp(1.1rem,1.6vw,1.6rem);letter-spacing:-.03em;color:var(--ink);margin-bottom:4px}
+.ct-head{background:var(--accent);color:var(--accent-ink)}
+.ct-f2{background:var(--field-1)}
+.ct-act{background:var(--field-2);align-items:flex-start;justify-content:flex-end}
+.ct-act .btn{background:var(--bg);color:var(--ink)}
+.ct-f1{background:var(--surface)}.ct-f3{background:var(--surface)}
+.facts-m{display:none}
+@media (max-width:860px){
+  .board{gap:4px}
+  .stick{flex-direction:column;gap:8px}
+  .stick .board{width:100%}
+  .ct{background:url("assets/box.webp") calc(var(--c)/5*100%) calc(var(--r)/3*100%)/600% 400% no-repeat;padding:0}
+  .ct > *{display:none}
+  .facts-m{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:8px;margin-top:8px}
+  .facts-m h2{grid-column:1/-1;font-size:9vw;padding:16px;background:var(--accent);color:var(--accent-ink)}
+  .facts-m p{padding:16px;background:var(--surface);color:var(--muted);font-size:16px}
+  .facts-m b{color:var(--ink);font-size:20px;margin-right:8px}
+  .facts-m .btn{width:100%;grid-column:1/-1}
+}
+
+/* 3 · каталог: двусторонние строки + бюджет */
+.cat{background:var(--field-2);color:var(--field-2-ink)}
+.cat .wrap{max-width:520px;margin-left:22%}
+.cat h2{font-size:clamp(1.5rem,2vw,1.75rem);letter-spacing:-.02em;font-weight:500;line-height:1.1}
+.budget{margin-top:32px}
+.budget label{display:flex;justify-content:space-between;font-weight:500;font-size:var(--step-small);margin-bottom:10px}
+.budget output{font-variant-numeric:tabular-nums}
+.budget input{width:100%;accent-color:#c42a6b;height:44px}
+.budget p{font-size:var(--step-small);color:var(--field-2-muted);margin-top:4px}
+.grp{margin-top:40px}
+.gname{font-size:var(--step-small);color:var(--field-2-muted);margin-bottom:6px;font-weight:500}
+.row{display:flex;align-items:center;gap:12px;min-height:50px;padding:4px 0;text-decoration:none;font-size:16px;transition:opacity .25s var(--ease)}
+.row .dot{flex:none;width:16px;height:16px;border-radius:50%}
+.row .dot-img{position:relative;width:40px;height:50px;border-radius:0;overflow:hidden;background:var(--surface)}
+.row .dot-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.row .nm{flex:1;color:var(--field-2-ink);font-weight:500;line-height:1.25}
+.row .pr{flex:none;font-size:var(--step-small);color:var(--field-2-muted);font-variant-numeric:tabular-nums;align-self:center}
+.row.off{opacity:.25}
+@media (hover:hover) and (pointer:fine){.row:hover .nm{text-decoration:underline;text-underline-offset:3px}}
+.cat .side{display:none}
+@media (min-width:861px){
+  .cat .inner{display:grid;grid-template-columns:1fr 1fr;gap:var(--m)}
+  .cat .wrap{margin-left:22%;max-width:520px;grid-column:1}
+  .cat .side{display:block;grid-column:2;position:sticky;top:20px;align-self:start;max-width:420px;justify-self:end}
+  .cat .side .big{font-weight:600;letter-spacing:-.03em;line-height:1;font-size:clamp(1.6rem,2.4vw,2.25rem)}
+  .cat .side p{margin-top:16px;color:var(--field-2-muted)}
+  .cat .side .btn{margin-top:24px}
+}
+@media (max-width:860px){.cat .wrap{margin-left:0;max-width:none;padding:0 8px}.row{min-height:44px}.row .pr{padding-top:0}}
+
+/* 4 · как купить: лента */
+.how{background:var(--surface);padding-left:0;padding-right:0;overflow:hidden}
+.how .top{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;padding:0 var(--m)}
+.how h2{font-size:clamp(1.75rem,3vw,2.25rem);letter-spacing:-.03em;font-weight:500}
+.how .ar{display:flex;gap:8px}
+.how .ar button{width:48px;height:48px;border:0;border-radius:0;background:var(--ink);color:var(--bg);font-size:20px;cursor:pointer;transition:transform .16s var(--ease)}
+.how .ar button:active{transform:scale(.95)}
+.bar{margin:20px var(--m) 40px;height:6px;background:#3a2933}
+.bar i{display:block;height:100%;width:var(--w,25%);background:var(--ink);transition:width .2s linear}
+.rail{display:flex;gap:32px;overflow-x:auto;scroll-snap-type:x proximity;scroll-padding-left:var(--m);padding:0 var(--m) 8px;scrollbar-width:none}
+.rail::-webkit-scrollbar{display:none}
+.st{flex:none;width:280px;scroll-snap-align:start;display:flex;flex-direction:column}
+.st b{font-size:18px;font-weight:600}
+.st p{margin-top:8px;font-size:16px;color:var(--muted);line-height:1.45}
+.st .ph{margin-top:var(--gap);aspect-ratio:4/5;background:var(--bg);color:var(--ink);display:flex;align-items:flex-end;padding:10px}
+.st .ph span{font-weight:600;font-size:1.2rem;letter-spacing:-.03em;line-height:.95;position:relative}
+@media (max-width:860px){.st{width:72vw}.rail{gap:16px}.panel nav a,.f-nav a{min-height:44px}.how .ar{display:none}.st{--gap:40px}}
+
+/* 5 · отзывы таблицей */
+.proof{background:var(--field-2);color:var(--field-2-ink)}
+.proof h2{max-width:11ch;font-size:clamp(2.2rem,5vw,4.6rem)}
+.proof h2 span{display:block;margin-left:calc((100% - 0px)/6)}
+.proof table{margin-top:72px;width:100%;border-collapse:collapse;font-size:17px}
+.proof th{text-align:left;font-size:var(--step-small);font-weight:500;color:var(--field-2-muted);padding:0 0 12px}
+.proof td{padding:14px 12px 14px 12px;vertical-align:top;border:0}
+.proof tr:nth-child(even) td{background:#f4eef2}
+.proof td:last-child,.proof th:last-child{text-align:right}
+.proof td:first-child{width:18%;color:var(--field-2-muted)}
+.proof td.q{font-weight:500;width:56%}
+.proof .src{margin-top:24px;font-size:var(--step-small);color:var(--field-2-muted)}
+.proof .src a{color:inherit}
+@media (max-width:860px){
+  .proof h2{font-size:11vw;max-width:none}.proof h2 span{margin-left:0}
+  .proof table,.proof tbody,.proof tr,.proof td{display:block}.proof thead{display:none}
+  .proof tr{padding:14px 12px}.proof tr:nth-child(even){background:#f4eef2}.proof tr:nth-child(even) td{background:none}
+  .proof td{padding:0}.proof td:first-child{width:auto;font-size:var(--step-small)}.proof td.q{width:auto}.proof td:last-child{text-align:left;color:var(--field-2-muted);font-size:15px}
+}
+
+/* 6 · контакт: лента + бар из трёх ячеек */
+.contact{background:var(--field-1);padding:48px 0 64px;overflow:hidden}
+.marq{display:flex;gap:8px;width:max-content;animation:drift 60s linear infinite}
+.sf{flex:none;height:150px;aspect-ratio:var(--r);display:flex;align-items:flex-end;padding:8px}
+.sf i{font-style:normal;font-weight:600;font-size:14px;line-height:1;position:relative}
+@keyframes drift{to{transform:translateX(-50%)}}
+.contact h2{margin:72px var(--m) 0;font-size:clamp(2.25rem,4vw,3.75rem)}
+.contact .addr{margin:16px var(--m) 0;max-width:60ch}
+.cells{margin:40px var(--m) 0;display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.cells > *{min-height:96px;display:flex;align-items:center;justify-content:center;text-align:center;background:#5b1a46;color:var(--ink);font-size:18px;font-weight:500;text-decoration:none;padding:12px;transition:background-color .16s var(--ease)}
+.cells a.cell{}
+@media (hover:hover) and (pointer:fine){.cells a.cell:hover{background:#7a2a60}}
+.cells .btn{min-height:96px;background:var(--field-2);color:var(--field-2-ink);font-size:18px}
+.contact .note{margin:12px var(--m) 0;font-size:var(--step-small);color:#d6b7c8}
+@media (max-width:860px){.sf{height:110px}.contact h2{font-size:9vw;margin-top:48px}.cells{grid-template-columns:1fr}.cells > *{min-height:60px}.cells .btn{min-height:60px}}
+
+/* 7 · подвал плитками */
+.foot{padding:8px;background:var(--bg);display:grid;grid-template-columns:repeat(12,1fr);gap:8px}
+.foot > *{background:var(--surface);padding:20px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none}
+.f-st{grid-column:span 4;font-size:24px;line-height:1.15;letter-spacing:-.02em}
+.f-st small{font-size:var(--step-small);color:var(--muted);letter-spacing:0}
+.f-nav{grid-column:span 3}.f-nav ul{display:grid;gap:4px;font-size:16px}.f-nav a{text-decoration:none;display:inline-flex;min-height:32px;align-items:center}
+.f-city{grid-column:span 2;font-size:16px}.f-city b{display:block;font-size:28px;letter-spacing:-.03em;font-weight:600}
+.f-mail{grid-column:span 3;font-size:20px;justify-content:flex-end}
+.f-word{grid-column:span 8;min-height:320px;background:var(--field-2);color:var(--field-2-ink);align-items:center;justify-content:center;font-weight:600;font-size:clamp(2.5rem,9vw,9rem);letter-spacing:-.05em;line-height:1}
+.f-go{grid-column:span 4;min-height:320px;background:var(--accent);color:var(--accent-ink);font-size:28px;font-weight:600;letter-spacing:-.03em;line-height:1.05}
+.f-go svg{align-self:flex-end;width:56px;height:56px;transition:transform .25s var(--ease)}
+@media (hover:hover) and (pointer:fine){.f-go:hover svg{transform:translate(6px,-6px)}}
+@media (max-width:860px){
+  .foot{grid-template-columns:1fr 1fr;gap:6px}.foot > *{grid-column:span 1;min-height:150px}
+  .f-word{grid-column:span 2;order:-1;min-height:160px;font-size:20vw}.f-go{grid-column:span 2;order:-2;min-height:150px}
+  .f-st{grid-column:span 2;order:5}.f-mail{font-size:16px}.f-city b{font-size:22px}
+}
+
+/* появление частей секции */
+.js .rise{opacity:0;transform:translateY(24px);transition:opacity .7s var(--ease),transform .7s var(--ease);transition-delay:calc(var(--d,0)*70ms)}
+.js .rise.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .marq,.hero .hc{animation:none}
+  .pin{height:auto}.stick{position:static;height:auto;overflow:visible}
+  .js .rise{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+.proof .src a{display:inline-flex;align-items:center;min-height:44px}
+@media (max-width:860px){.f-nav a,.panel nav a{min-height:44px}}
+</style>
+</head>
+<body>
+<script>document.documentElement.classList.add('js')</script>
+
+<header class="hero" id="top">
+  <div class="sheet" aria-hidden="true"><div class="hc" style="--o:0px"><figure class="fr" style="--r:3/4;--bg:#ff488b;--ink:#0d060b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/svinarnik.webp" alt="Свинарник. Книга 1" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption>Свинарник. Книга 1</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#f6d3e1;--ink:#101421;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/zvezdnoe-ditya.webp" alt="Звёздное дитя. Книга 7" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption>Звёздное дитя. Книга 7</figcaption></figure><figure class="fr" style="--r:1/1;--bg:#c42a6b;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/fan.webp" alt="Фан. Охотница на демонов" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption>Фан. Охотница на демонов</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#ffffff;--ink:#101421;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/clamp-kuro.webp" alt="CLAMP COLOR KURO" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption>CLAMP COLOR KURO</figcaption></figure></div><div class="hc" style="--o:-90px"><figure class="fr" style="--r:3/4;--bg:#470c35;--ink:#ffffff;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/clamp-shiro.webp" alt="" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption></figcaption></figure><figure class="fr" style="--r:1/1;--bg:#7a1f55;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/vedmy.webp" alt="" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption></figcaption></figure><figure class="fr" style="--r:3/4;--bg:#101421;--ink:#ffffff;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/tor.webp" alt="" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption></figcaption></figure><figure class="fr" style="--r:4/5;--bg:#ff488b;--ink:#0d060b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/vizhn.webp" alt="Вижн. Том 1-2" width="480" height="576" decoding="async" fetchpriority="high"></div><figcaption>Вижн. Том 1-2</figcaption></figure></div><div class="hc" style="--o:-40px"><figure class="fr" style="--r:1/1;--bg:#c42a6b;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/gwen-4.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:3/4;--bg:#ffffff;--ink:#101421;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/gwen-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:4/5;--bg:#3a1530;--ink:#ff488b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/gwen-1.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:3/4;--bg:#470c35;--ink:#ffffff;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/khvostik-3.webp" alt="Хвостик не имеет значения. Том 3" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Хвостик не имеет значения. Том 3</figcaption></figure></div><div class="hc" style="--o:-130px"><figure class="fr" style="--r:3/4;--bg:#101421;--ink:#ffffff;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/ultarskie-koshki.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:4/5;--bg:#ff488b;--ink:#0d060b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/greshnitsy-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:3/4;--bg:#f6d3e1;--ink:#101421;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/greshnitsy-1.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></div><figcaption></figcaption></figure><figure class="fr" style="--r:3/4;--bg:#c42a6b;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/volshebstvo.webp" alt="Волшебство продолжается" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Волшебство продолжается</figcaption></figure></div><div class="hc" style="--o:-20px"><figure class="fr" style="--r:4/5;--bg:#3a1530;--ink:#ff488b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/alisa.webp" alt="Алиса в лабиринте" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Алиса в лабиринте</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#470c35;--ink:#ffffff;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/serdce-braille.webp" alt="Сердце по Брайлю" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Сердце по Брайлю</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#7a1f55;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/svoboda-snovidenij.webp" alt="Свобода сновидений" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Свобода сновидений</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#101421;--ink:#ffffff;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/heresy-13.webp" alt="Ересь Хоруса. Книга XIII" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Ересь Хоруса. Книга XIII</figcaption></figure></div><div class="hc" style="--o:-70px"><figure class="fr" style="--r:3/4;--bg:#f6d3e1;--ink:#101421;--sb:#ffffff;--si:#101421"><div class="cover"><img src="assets/covers/kalendar.webp" alt="Календарь «Ивовый Лес» 2027" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Календарь «Ивовый Лес» 2027</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#c42a6b;--ink:#ffffff;--sb:#7a1f55;--si:#ffffff"><div class="cover"><img src="assets/covers/beholder-lim.webp" alt="Бехолдер. Лимитированное издание" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Бехолдер. Лимитированное издание</figcaption></figure><figure class="fr" style="--r:3/4;--bg:#ffffff;--ink:#101421;--sb:#f6d3e1;--si:#101421"><div class="cover"><img src="assets/covers/beholder-tv.webp" alt="Бехолдер. Твёрдый переплёт" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Бехолдер. Твёрдый переплёт</figcaption></figure><figure class="fr" style="--r:1/1;--bg:#3a1530;--ink:#ff488b;--sb:#ff488b;--si:#0d060b"><div class="cover"><img src="assets/covers/beholder.webp" alt="Бехолдер. Руководство" width="480" height="576" decoding="async" loading="lazy"></div><figcaption>Бехолдер. Руководство</figcaption></figure></div></div>
+  <div class="panel">
+    <span class="mark">BWComics</span>
+    <h1>Комиксы и манга в&nbsp;Туле</h1>
+    <p class="sub">6&nbsp;660 позиций в ВК Маркете и магазин в павильоне 16. Подберём, с чего начать.</p>
+    <a class="btn" href="https://vk.ru/market-43275378" rel="noopener">Смотреть в ВК Маркете</a>
+    <nav aria-label="Разделы"><a href="#katalog">Каталог</a><a href="#predzakaz">Предзаказ</a><a href="#kak-najti">Как найти</a></nav>
+  </div>
+</header>
+
+<main>
+<section class="sec sec-pin" id="predzakaz" aria-label="Предзаказ: бокс «Атака на титанов»">
+  <div class="pin" data-pin><div class="stick"><div class="board"><div class="mt ct ct-head" style="--c:0;--r:0"><h2>Бокс «Атака на титанов»</h2></div><div class="mt" style="--c:1;--r:0"></div><div class="mt" style="--c:2;--r:0"></div><div class="mt" style="--c:3;--r:0"></div><div class="mt" style="--c:4;--r:0"></div><div class="mt" style="--c:5;--r:0"></div><div class="mt" style="--c:0;--r:1"></div><div class="mt" style="--c:1;--r:1"></div><div class="mt ct ct-f1" style="--c:2;--r:1"><p><b>5 850 ₽</b>цена бокса</p></div><div class="mt" style="--c:3;--r:1"></div><div class="mt" style="--c:4;--r:1"></div><div class="mt ct ct-f2" style="--c:5;--r:1"><p><b>Уточняйте</b>срок предзаказа</p></div><div class="mt" style="--c:0;--r:2"></div><div class="mt" style="--c:1;--r:2"></div><div class="mt" style="--c:2;--r:2"></div><div class="mt ct ct-f3" style="--c:3;--r:2"><p><b>Условия</b>в сообщениях ВК</p></div><div class="mt" style="--c:4;--r:2"></div><div class="mt" style="--c:5;--r:2"></div><div class="mt" style="--c:0;--r:3"></div><div class="mt" style="--c:1;--r:3"></div><div class="mt" style="--c:2;--r:3"></div><div class="mt" style="--c:3;--r:3"></div><div class="mt ct ct-act" style="--c:4;--r:3"><a class="btn" href="https://vk.ru/bwcomics" rel="noopener">Предзаказать</a></div><div class="mt" style="--c:5;--r:3"></div></div>
+  <div class="facts-m">
+    <h2>Бокс «Атака на титанов»</h2>
+    <p><b>5 850 ₽</b>цена бокса</p>
+    <p><b>Уточняйте</b>срок предзаказа</p>
+    <p><b>Условия</b>в сообщениях ВК</p>
+    <a class="btn" href="https://vk.ru/bwcomics" rel="noopener">Предзаказать</a>
+  </div></div></div>
+</section>
+
+<section class="sec cat" id="katalog" aria-label="Каталог">
+  <div class="inner">
+    <div class="wrap">
+      <h2 class="rise">Из каталога</h2>
+      <div class="budget rise" style="--d:1">
+        <label for="bud"><span>Мой бюджет</span><output id="bout" for="bud">без ограничений</output></label>
+        <input id="bud" type="range" min="500" max="4000" step="100" value="4000" aria-describedby="bcount">
+        <p id="bcount" aria-live="polite">Показаны все 24 позиции. Двигайте ползунок, лишнее притухнет.</p>
+      </div>
+      <div class="grp"><p class="gname">Манга и манхва</p><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1040"><span class="dot dot-img"><img src="assets/covers/svinarnik.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Свинарник. Книга 1. Добро пожаловать в кошмар</span><span class="pr">1 040 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1310"><span class="dot dot-img"><img src="assets/covers/zvezdnoe-ditya.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Звёздное дитя. Книга 7</span><span class="pr">1 310 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="600"><span class="dot dot-img"><img src="assets/covers/khvostik-3.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Хвостик не имеет значения. Том 3</span><span class="pr">600 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="530"><span class="dot dot-img"><img src="assets/covers/greshnitsy-1.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Грешницы лазурной бездны. Том 1</span><span class="pr">530 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="540"><span class="dot dot-img"><img src="assets/covers/greshnitsy-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Грешницы лазурной бездны. Том 2</span><span class="pr">540 ₽</span></a></div><div class="grp"><p class="gname">Marvel</p><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="800"><span class="dot dot-img"><img src="assets/covers/gwen-1.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Гвен-Паук. Том 1. Еще большая сила</span><span class="pr">800 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="800"><span class="dot dot-img"><img src="assets/covers/gwen-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Гвен-Паук. Том 2. Излюбленное оружие</span><span class="pr">800 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="800"><span class="dot dot-img"><img src="assets/covers/gwen-4.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Гвен-Паук. Том 4. Хищники</span><span class="pr">800 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1600"><span class="dot dot-img"><img src="assets/covers/tor.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Тор: Бог Грома. Комплект из двух книг</span><span class="pr">1 600 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1250"><span class="dot dot-img"><img src="assets/covers/vizhn.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Комплект комиксов Вижн. Том 1-2</span><span class="pr">1 250 ₽</span></a></div><div class="grp"><p class="gname">Фэнтези и фантастика</p><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="990"><span class="dot dot-img"><img src="assets/covers/fan.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Фан. Охотница на демонов</span><span class="pr">990 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1250"><span class="dot dot-img"><img src="assets/covers/vedmy.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Ведьмы</span><span class="pr">1 250 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="840"><span class="dot dot-img"><img src="assets/covers/ultarskie-koshki.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Ультарские кошки и другие рассказы</span><span class="pr">840 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="3850"><span class="dot dot-img"><img src="assets/covers/heresy-13.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Ересь Хоруса. Книга XIII</span><span class="pr">3 850 ₽</span></a></div><div class="grp"><p class="gname">Артбуки</p><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1430"><span class="dot" style="background:#101421"></span><span class="nm">Артбук MMA. Despite you</span><span class="pr">1 430 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1320"><span class="dot" style="background:#c42a6b"></span><span class="nm">Артбук Шибари. Х Р А М</span><span class="pr">1 320 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="2190"><span class="dot" style="background:#470c35"></span><span class="nm">Артбук Фрэнк Фразетта. Тонкие линии</span><span class="pr">2 190 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="2690"><span class="dot dot-img"><img src="assets/covers/clamp-kuro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">CLAMP COLOR KURO</span><span class="pr">2 690 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="2690"><span class="dot dot-img"><img src="assets/covers/clamp-shiro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Артбук CLAMP COLOR SHIRO</span><span class="pr">2 690 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="2690"><span class="dot" style="background:#7a1f55"></span><span class="nm">Артбук BLAME! and so on</span><span class="pr">2 690 ₽</span></a></div><div class="grp"><p class="gname">Ещё в каталоге</p><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="550"><span class="dot dot-img"><img src="assets/covers/beholder.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Бехолдер. Руководство для наблюдателя</span><span class="pr">550 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1050"><span class="dot dot-img"><img src="assets/covers/beholder-tv.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Бехолдер. Твёрдый переплёт</span><span class="pr">1 050 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="1290"><span class="dot dot-img"><img src="assets/covers/beholder-lim.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Бехолдер. Лимитированное издание</span><span class="pr">1 290 ₽</span></a><a class="row" href="https://vk.ru/market-43275378" rel="noopener" data-p="990"><span class="dot dot-img"><img src="assets/covers/kalendar.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="nm">Календарь настенный «Ивовый Лес» на 2027 год</span><span class="pr">990 ₽</span></a></div>
+    </div>
+    <aside class="side">
+      <p class="big">24&nbsp;позиции из&nbsp;6&nbsp;660</p>
+      <p>Это срез каталога ВК Маркета с ценами на сегодня.</p>
+      <a class="btn" href="https://vk.ru/market-43275378" rel="noopener">Смотреть в ВК Маркете</a>
+    </aside>
+  </div>
+</section>
+
+<section class="sec how" id="kak-kupit" aria-label="Как купить">
+  <div class="top rise"><h2>Как купить</h2><div class="ar"><button type="button" aria-label="Назад" data-dir="-1">←</button><button type="button" aria-label="Вперёд" data-dir="1">→</button></div></div>
+  <div class="bar" aria-hidden="true"><i id="prog"></i></div>
+  <ol class="rail" id="rail" tabindex="0" aria-label="Шаги покупки, листайте стрелками"><li class="st" style="--gap:60px"><b>Выбираете</b><p>В ВК Маркете: корзина и «Купить сейчас». 6 660 товаров и 18 подборок: манга, Marvel, DC, Bubble, настолки, фигурки.</p><div class="ph" style="--bg:#ffffff;--ink:#101421"><img src="assets/covers/clamp-kuro.webp" alt="CLAMP COLOR KURO" width="480" height="576" decoding="async" loading="lazy"></div></li><li class="st" style="--gap:110px"><b>Приходите</b><p>Likerka Loft, павильон 16, проспект Ленина, 85, корпус 5. Открыто ежедневно с 11:00 до 21:00.</p><div class="ph" style="--bg:#3a1530;--ink:#ff488b"><img src="assets/covers/gwen-4.webp" alt="Гвен-Паук. Том 4" width="480" height="576" decoding="async" loading="lazy"></div></li><li class="st" style="--gap:80px"><b>Спрашиваете</b><p>Продавцы подбирают по жанру и бюджету: если не знаете, с чего начать, расскажите, что читали.</p><div class="ph" style="--bg:#470c35;--ink:#ffffff"><img src="assets/covers/greshnitsy-2.webp" alt="Грешницы лазурной бездны. Том 2" width="480" height="576" decoding="async" loading="lazy"></div></li><li class="st" style="--gap:130px"><b>Заказываете</b><p>Нужного тома нет в наличии? Напишите: привезём на заказ.</p><div class="ph" style="--bg:#7a1f55;--ink:#ffffff"><img src="assets/covers/svoboda-snovidenij.webp" alt="Свобода сновидений" width="480" height="576" decoding="async" loading="lazy"></div></li><li class="st" style="--gap:90px"><b>Предзаказываете</b><p>Коллекционные издания, как бокс «Атака на титанов». Условия: {{предоплата, срок поступления, возврат}}</p><div class="ph" style="--bg:#101421;--ink:#ffffff"><img src="assets/covers/beholder.webp" alt="Бехолдер. Руководство" width="480" height="576" decoding="async" loading="lazy"></div></li><li class="st" style="--gap:120px"><b>Получаете</b><p>Доставка по Туле и России, в пункты СДЭК, включая Беларусь. Сроки и цена: {{сроки и стоимость СДЭК}}</p><div class="ph" style="--bg:#ff488b;--ink:#0d060b"><img src="assets/covers/clamp-shiro.webp" alt="Артбук CLAMP COLOR SHIRO" width="480" height="576" decoding="async" loading="lazy"></div></li></ol>
+</section>
+
+<section class="sec proof" id="otzyvy" aria-label="Отзывы">
+  <h2 class="rise">Что пишут<span>на Картах</span></h2>
+  <table class="rise">
+    <thead><tr><th>Где</th><th>Что отмечают</th><th>Оценка</th></tr></thead>
+    <tbody>
+      <tr><td>Яндекс.Карты</td><td class="q">Общий рейтинг магазина</td><td>5,0 из 5 · 161 оценка</td></tr>
+      <tr><td>Яндекс.Карты</td><td class="q">Персонал</td><td>100% положительных · 45 отзывов</td></tr>
+      <tr><td>Яндекс.Карты</td><td class="q">Выбор товаров</td><td>97% положительных · 38 отзывов</td></tr>
+      <tr><td>Яндекс.Карты</td><td class="q">«Очень уютное место. Огромный выбор товаров на любой вкус.»</td><td>отзыв</td></tr>
+      <tr><td>Яндекс.Карты</td><td class="q">«Если любите мангу, то вам сюда, огромный выбор.»</td><td>отзыв</td></tr>
+      <tr><td>Яндекс.Карты</td><td class="q">«Отличное место, чтобы подобрать себе комикс, мангу или обычную книжку по интересам.»</td><td>отзыв</td></tr>
+    </tbody>
+  </table>
+  <p class="src"><a href="https://yandex.ru/maps/org/bwcomics/1572807677/reviews/" target="_blank" rel="noopener">Все отзывы на Яндекс.Картах</a></p>
+</section>
+
+<section class="sec contact" id="kak-najti" aria-label="Как найти магазин">
+  <div class="marq" aria-hidden="true"><span class="sf" style="--r:3/4;--bg:#f6d3e1;--ink:#101421"><img src="assets/covers/fan.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#c42a6b;--ink:#ffffff"><img src="assets/covers/vizhn.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#ffffff;--ink:#101421"><img src="assets/covers/ultarskie-koshki.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#3a1530;--ink:#ff488b"><img src="assets/covers/serdce-braille.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#470c35;--ink:#ffffff"><img src="assets/covers/beholder-tv.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#7a1f55;--ink:#ffffff"><img src="assets/covers/clamp-kuro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#101421;--ink:#ffffff"><img src="assets/covers/gwen-4.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#ff488b;--ink:#0d060b"><img src="assets/covers/greshnitsy-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#f6d3e1;--ink:#101421"><img src="assets/covers/svoboda-snovidenij.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#c42a6b;--ink:#ffffff"><img src="assets/covers/beholder.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#ffffff;--ink:#101421"><img src="assets/covers/clamp-shiro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#3a1530;--ink:#ff488b"><img src="assets/covers/gwen-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#f6d3e1;--ink:#101421"><img src="assets/covers/fan.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#c42a6b;--ink:#ffffff"><img src="assets/covers/vizhn.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#ffffff;--ink:#101421"><img src="assets/covers/ultarskie-koshki.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#3a1530;--ink:#ff488b"><img src="assets/covers/serdce-braille.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#470c35;--ink:#ffffff"><img src="assets/covers/beholder-tv.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#7a1f55;--ink:#ffffff"><img src="assets/covers/clamp-kuro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#101421;--ink:#ffffff"><img src="assets/covers/gwen-4.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#ff488b;--ink:#0d060b"><img src="assets/covers/greshnitsy-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#f6d3e1;--ink:#101421"><img src="assets/covers/svoboda-snovidenij.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/4;--bg:#c42a6b;--ink:#ffffff"><img src="assets/covers/beholder.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:1/1;--bg:#ffffff;--ink:#101421"><img src="assets/covers/clamp-shiro.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span><span class="sf" style="--r:3/2;--bg:#3a1530;--ink:#ff488b"><img src="assets/covers/gwen-2.webp" alt="" width="480" height="576" decoding="async" loading="lazy"></span></div>
+  <h2 class="rise">Павильон 16 в Likerka Loft</h2>
+  <p class="addr rise" style="--d:1">Тула, проспект Ленина, 85, корпус 5. Магазин внутри комплекса Likerka Loft, павильон 16. Вход можно посмотреть в Яндекс.Картах по кнопке «Показать входы». Если не нашли вход – позвоните, подскажем.</p>
+  <div class="cells rise" style="--d:2">
+    <a class="cell" href="tel:+79964316273">+7 (996) 431-62-73</a>
+    <span>11:00–21:00 ежедневно</span>
+    <a class="btn" href="https://yandex.ru/maps/org/bwcomics/1572807677/" target="_blank" rel="noopener">Маршрут в Яндекс.Картах</a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <p class="f-st">Комиксы и манга в Туле. Подберём, с чего начать.<small>{{юрлицо}} · ИНН {{ИНН}}</small></p>
+  <nav class="f-nav" aria-label="Разделы"><ul><li><a href="#katalog">Каталог</a></li><li><a href="#predzakaz">Предзаказ</a></li><li><a href="#kak-kupit">Как купить</a></li><li><a href="#kak-najti">Как найти</a></li></ul></nav>
+  <div class="f-city"><span>Тула</span><b id="clock">Likerka Loft</b></div>
+  <a class="f-mail" href="tel:+79964316273">+7 (996) 431-62-73</a>
+  <div class="f-word">BWComics</div>
+  <a class="f-go" href="https://vk.ru/market-43275378" rel="noopener"><span>Смотреть в ВК Маркете</span><svg viewBox="0 0 56 56" fill="none" stroke="currentColor" stroke-width="4" aria-hidden="true"><path d="M12 44 44 12M20 12h24v24"/></svg></a>
+</footer>
+
+<script>
+(function(){
+  var io = 'IntersectionObserver' in window ? new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15}) : null;
+  document.querySelectorAll('.rise').forEach(function(el){ if(io) io.observe(el); else el.classList.add('in'); });
+  var pin=document.querySelector('[data-pin]');
+  if(pin&&!matchMedia('(prefers-reduced-motion:reduce)').matches){
+    var ts=[].slice.call(pin.querySelectorAll('.mt')),n=ts.length,seed=[],ord=[];
+    var idx=ts.map(function(t,i){return i});
+    var img=idx.filter(function(i){return !ts[i].classList.contains('ct')}),col=idx.filter(function(i){return ts[i].classList.contains('ct')});
+    img.sort(function(a,b){return ((a*7)%11)-((b*7)%11)||a-b});
+    img.concat(col).forEach(function(i,r){ord[i]=r});
+    ts.forEach(function(t,i){var a=(i*2.399)%6.283;seed[i]={x:Math.cos(a)*(60+(i*37)%50),y:Math.sin(a)*(40+(i*23)%40),r:((i*53)%40)-20}});
+    var busy=false;
+    function tick(){busy=false;var vh=innerHeight,rc=pin.getBoundingClientRect(),p=Math.max(0,Math.min(1,(vh*.7-rc.top)/(rc.height-vh+vh*.7)));
+      for(var i=0;i<n;i++){var st=ord[i]/n*.45,t=Math.max(0,Math.min(1,(p/.78-st)/.5)),e=1-Math.pow(1-t,3),q=1-e,sd=seed[i];
+        ts[i].style.transform=t>=1?'':'translate('+(sd.x*q).toFixed(1)+'vw,'+(sd.y*q).toFixed(1)+'vh) rotate('+(sd.r*q).toFixed(1)+'deg) scale('+(0.6+.4*e).toFixed(3)+')';
+        ts[i].style.opacity=t>=1?'':Math.min(1,t*4).toFixed(2)}}
+    function req(){if(!busy){busy=true;requestAnimationFrame(tick)}}
+    addEventListener('scroll',req,{passive:true});addEventListener('resize',req);tick();
+  }
+  // бюджет
+  var r=document.getElementById('bud'),o=document.getElementById('bout'),c=document.getElementById('bcount'),rows=[].slice.call(document.querySelectorAll('.row'));
+  function f(n){return String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'\u00a0')}
+  function upd(){var v=+r.value,max=+r.max,n=0;rows.forEach(function(x){var ok=v>=max||+x.dataset.p<=v;x.classList.toggle('off',!ok);if(ok)n++});
+    o.textContent=v>=max?'без ограничений':'до '+f(v)+'\u00a0₽';
+    c.textContent=v>=max?'Показаны все '+rows.length+' позиции. Двигайте ползунок, лишнее притухнет.':n?'Подходит '+n+' из '+rows.length+' позиций до '+f(v)+'\u00a0₽.':'До '+f(v)+'\u00a0₽ в этой подборке ничего нет. Сдвиньте ползунок вправо.'}
+  r.addEventListener('input',upd);upd();
+  // лента «как купить»
+  var rail=document.getElementById('rail'),prog=document.getElementById('prog');
+  function p(){var m=rail.scrollWidth-rail.clientWidth;var w=rail.clientWidth/rail.scrollWidth*100;prog.style.setProperty('--w',Math.min(100,w+(m?rail.scrollLeft/m*(100-w):0))+'%')}
+  rail.addEventListener('scroll',p,{passive:true});p();
+  document.querySelectorAll('[data-dir]').forEach(function(b){b.addEventListener('click',function(){rail.scrollBy({left:312*b.dataset.dir,behavior:'smooth'})})});
+  // время в Туле
+  var k=document.getElementById('clock');function t(){try{k.textContent=new Date().toLocaleTimeString('ru-RU',{hour:'2-digit',minute:'2-digit',timeZone:'Europe/Moscow'})}catch(e){}}t();setInterval(t,30000);
+  // телефон: позиции плиток мозаики 3 x 6
+  document.querySelectorAll('.board .mt').forEach(function(t,i){t.style.setProperty('--pc',i%3);t.style.setProperty('--pr',Math.floor(i/3))});
+})();
+</script>
+</body>
+</html>
